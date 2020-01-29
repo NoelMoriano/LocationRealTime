@@ -1,13 +1,23 @@
 //REQUIRED
-const express = require ("express");
+const express = require("express");
+engine = require("ejs-mate");
+const path = require("path");
 
 //INITILIZATIONS
 const app = express();
-const port = 3000;
+const port = 3001;
 
+//CONFIG VIEWS WITH ESJ
+app.engine("ejs",engine);
+
+app.set("view engine","ejs");
+app.set("views", path.join(__dirname,"views")); 
 
 //ROUTES
-app.get("/",(req,res) => res.send("Mi primer hello word with nodejs and express"));
+app.use(require("./routes"));
+
+//CONFIG FILES STATICS
+app.use(express.static(path.join(__dirname,"public")));
 
 //STARTING THE SERVER
 app.listen(port,() => console.log(`App run port ${port}`));
