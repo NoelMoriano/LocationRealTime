@@ -1,11 +1,11 @@
-//REQUIRED
+//REQUIRE
 const express = require("express");
 engine = require("ejs-mate");
 const path = require("path");
 
 //INITILIZATIONS
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 //CONFIG VIEWS WITH ESJ
 app.engine("ejs",engine);
