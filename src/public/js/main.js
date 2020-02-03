@@ -19,7 +19,7 @@ map.locate({enableHighAccuracy:true});
 
 map.on("locationfound",(event) => {
 	const coords = [event.latlng.lat,event.latlng.lng];
-	console.log("coordsUserOne->",coords);
+	console.log("coordsnoeLMariano->",coords);
 	userMarker(coords,"noeLMariano","noeLMariano esta aqui!");
 	socket.emit("userCoordinates",event.latlng);
 });
@@ -27,6 +27,6 @@ map.on("locationfound",(event) => {
 //NEW USER COORS CREATE
 socket.on("newUserCoordinates", coords => {
 	const coords_ = [coords.lat, coords.lng];
-	console.log("coordsUserTwo->",coords_);
-	userMarker(coords_,"Roberto","Roberto esta aqui!");
+	console.log("coordsInvitado->",coords_);
+	userMarker(coords_,"Invitado","Invitado esta aqui!");
 })
