@@ -26,7 +26,7 @@ map.on("locationfound",(event) => {
 
 //NEW USER COORS CREATE
 socket.on("newUserCoordinates", coords => {
-	const coords_ = [coordsLat, coordsLng];
+	const coords_ = [coords.lat, coords.lng];
 	console.log("coordsUserTwo->",coords_);
-	userMarker(coords_,"Invitado Estas Aqui","Invitado esta aqui!");
+	userMarker(coords_,"Roberto","Roberto esta aqui!");
 })
