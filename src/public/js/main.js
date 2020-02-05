@@ -2,6 +2,24 @@ const socket = io(); //Initial socket
 
 let map = L.map("map-layout").setView([-12.1724344, -77.01996919999999],13);
 
+let users = [];
+
+//Get name user 
+let namesUser = document.getElementById("userNames").value;
+//Create event onClick
+document.getElementById("btnSendUserData").onclick = () => saveNamesUser(namesUser);
+
+const saveNamesUser  = (namesUser) => {
+	if(namesUser.length >= 1){
+			users.push(namesUser);
+			alert("Save user success");
+		}else{
+			return alert("Names user is required");
+	}
+}
+
+console.log("users->",users);
+
 const tileURL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 
 L.tileLayer(tileURL).addTo(map);

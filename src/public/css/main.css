@@ -10,3 +10,51 @@ body{
 	top: 0;
 	position: absolute;
 }
+
+#container-get-user{
+	position: absolute;
+	top: 43%;
+	left: 43%;
+	z-index: 99999;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background:#000;
+	border-radius: 7px;
+	padding: 10px;
+	color: #fff;
+	width: auto;
+	height: auto;
+}
+
+#content-none{
+	display: none;
+}
+
+
+#container-get-user label{
+		font-size: 1rem;
+		text-align: left;
+		margin: 5px 0;
+	}
+
+#container-get-user #userNames{
+		padding: 5px 0;
+		border: none;
+		border-radius: 2px;
+		width: 100%;
+		margin: 5px 0;	
+	}
+
+#container-get-user #btnSendUserData{
+		background: #40c540;
+		width: 100%;
+		border: none;
+		border-radius: 2px;
+		color: #000;
+		font-weight: 600;
+		font-size: .8rem;
+		margin: 5px 0;
+		cursor: pointer;
+	}
+
