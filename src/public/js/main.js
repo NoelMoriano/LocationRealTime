@@ -5,13 +5,15 @@ let map = L.map("map-layout").setView([-12.1724344, -77.01996919999999],13);
 let users = [];
 
 //Get name user 
-let namesUser = document.getElementById("userNames").value;
+let getNameUser = document.getElementById("userNames");
+let nameUser = getNameUser.addEventListener("change", (event) => event.target.value);
 //Create event onClick
-document.getElementById("btnSendUserData").onclick = () => saveNamesUser(namesUser);
+document.getElementById("btnSendUserData").onclick = () => saveNamesUser(nameUser);
 
-const saveNamesUser  = (namesUser) => {
-	if(namesUser.length >= 1){
-			users.push(namesUser);
+const saveNamesUser  = (nameUser_) => {
+	if(nameUser_ && nameUser_.length >= 1){
+			document.getElementById("userNames").value = nameUser_;
+			users.push(nameUser_);
 			alert("Save user success");
 		}else{
 			return alert("Names user is required");
